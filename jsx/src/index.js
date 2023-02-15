@@ -8,14 +8,16 @@ const el = document.getElementById('root')
 // 3) Tell React to take control of that element
 const root = ReactDOM.createRoot(el);
 
-// 4) Create a compontent 
 function App() {
-    let message = "Bye there!"
-    if (Math.random() > 0.5){
-        message = "Hello there!";
-    }
-    return <h1>{message}</h1>
-}
-
+    const name = 'Eva';
+  
+    return (
+      <div>
+        My name is:
+        <h1>{name}</h1>
+      </div>
+    );
+  }
 // 5) Show the component on the screen
+export default App;
 root.render(<App/>);
