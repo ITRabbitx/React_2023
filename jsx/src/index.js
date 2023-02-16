@@ -9,15 +9,13 @@ const el = document.getElementById('root')
 const root = ReactDOM.createRoot(el);
 
 function App() {
-    const name = 'Eva';
-  
-    return (
-      <div>
-        My name is:
-        <h1>{name}</h1>
-      </div>
-    );
-  }
+    const inputType = 'number';
+    const minValue = 5;
+
+    return <input type={inputType} min={minValue} />;
+    // alternate, more condensed way of using props:
+    // return <input type="number" min={5} />;
+}  
 // 5) Show the component on the screen
 export default App;
 root.render(<App/>);
