@@ -5,7 +5,7 @@ function App(){
 
 
     const handleClick = () => {
-        console.log('Button was clicked')
+        setCount(count + 1);
     };    
 
     return (
