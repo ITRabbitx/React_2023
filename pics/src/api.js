@@ -6,10 +6,8 @@ const searchImages = async () => {
         Authorization: 'Cient-ID aLH6dtF6y9EUm7UhAHVionvyTGX2nmAS9seDr4rL0ug',
       },   
       params: {
-        query: 'cars',
-      }  
-    
-    
+        query: 'cars'
+      },  
     });
 
     //Caveman debugging    
