@@ -1,5 +1,5 @@
 function BookShow() {
-    return <div>BookShow</div>
+  return <div>BookShow</div>;
 }
 
 export default BookShow;
