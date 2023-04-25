@@ -7,12 +7,17 @@ function SearchBar({ onSubmit }) {
         onSubmit('Zurich'); //temporarily hardcoded
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log("Submitted");
+    }    
+
     return (
     <div className='search-bar'>
-        <form onSubmit={console.log("test")}>
+        <form onSubmit={handleSubmit}>
             <label>Enter your City: </label>
             <input />
-            <button onClick={handleClick}>Get your Weather</button>
+            <button type="button" onClick={handleClick}>Get your Weather</button>
         </form>
     </div>
     );
