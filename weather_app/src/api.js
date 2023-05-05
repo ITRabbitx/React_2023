@@ -10,3 +10,5 @@ export async function getWeatherData(city) {
     }   
 }
 
+export default getWeatherData;
+
