@@ -1,3 +1,4 @@
+import getWeatherData from '../api';
 import './SearchBar.css';
 import { useState } from 'react';
 
@@ -7,7 +8,7 @@ function SearchBar({ onSubmit }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log("Submitted");
-        onSubmit(term);
+        getWeatherData(term);
     }    
 
     const handleChange = (event) => {

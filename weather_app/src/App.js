@@ -1,14 +1,15 @@
 import SearchBar from './components/SearchBar';
 import WeatherDisplay from './components/WeatherDisplay';
+import term from './components/SearchBar';
 import { useState } from 'react';
 
 function App() {
-    const [city, setCity] = useState([]);
+    const [city, setCity] = useState('');
 
-    const handleSubmit = async (term) => {
-        const result = await WeatherDisplay(term);
+    const handleSubmit = (city) => {
+        const result = WeatherDisplay(city);
         setCity(result);
-        console.log("Submitted");
+        console.log("result: ", result);
     }
 
     return (
