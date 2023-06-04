@@ -1,16 +1,8 @@
 {
   "books": [
     {
-      "title": "order of the phoenix",
+      "title": "Harry potter",
       "id": 1
-    },
-    {
-      "title": "Harry  Potter",
-      "id": 2
-    },
-    {
-      "title": "Learn ReactJs",
-      "id": 4
     }
   ]
 }
