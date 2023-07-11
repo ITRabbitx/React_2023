@@ -1,14 +1,20 @@
-import axios from 'axios';
-const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
+import React from 'react';
+import './WeatherDisplay.css';
 
-const getWeatherData = async (city, countryCode) =>  {
-    try {
-        const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&appid=${apiKey}`);
-        console.log(response.data);
-        return response.data;
-    } catch (error) {
-        console.error("Error fetching weather data: ", error);
-    }
-}
+const WeatherDisplay = ({ weatherData }) => {
+  return (
+    <div className="weather-display">
+      {weatherData && (
+        <div className="weather-info">
+          <h2>Weather Information</h2>
+          <p>City: {weatherData.name}</p>
+          <p>Temperature: {weatherData.main.temp}°C</p>
+          <p>Humidity: {weatherData.main.humidity}%</p>
+          <p>Wind Speed: {weatherData.wind.speed} m/s</p>
+        </div>
+      )}
+    </div>
+  );
+};
 
-export default getWeatherData;
+export default WeatherDisplay;

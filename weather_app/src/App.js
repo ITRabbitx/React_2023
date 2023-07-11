@@ -1,33 +1,28 @@
+import React, { useState } from 'react';
 import SearchBar from './components/SearchBar';
 import WeatherDisplay from './components/WeatherDisplay';
-import term from './components/SearchBar';
-import { useState } from 'react';
-import getCountryCode from './api';
-import getWeatherData from './api';
+import { getWeatherData } from './api';
 
 function App() {
-    const [city, setCity] = useState('');
+  const [weatherData, setWeatherData] = useState(null); // State to store weather data
 
-    const handleSubmit = async(city, event) => {
-        const result = WeatherDisplay(city);
-        setCity(result);
-        console.log("result: ", result);
+  const handleSubmit = async (city) => {
+    console.log("Submitted");
 
-        event.preventDefault();
-        console.log("Submitted");
-        const countryCode = await getCountryCode(term);
-        getWeatherData(term, countryCode);
-        };
-    
+    try {
+      const data = await getWeatherData(city);
+      setWeatherData(data);
+    } catch (error) {
+      console.error("Error fetching weather data: ", error);
+    }
+  };
 
-    return (
-        <div>
-            <SearchBar onSubmit={handleSubmit} />
-            <WeatherDisplay city={city} />
-        </div>
-    )
+  return (
+    <div>
+      <SearchBar onSubmit={handleSubmit} />
+      {weatherData && <WeatherDisplay weatherData={weatherData} />}
+    </div>
+  );
 }
-
-
 
 export default App;
